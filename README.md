@@ -1,6 +1,6 @@
-# Database Creator 
+# Image Database Generator 
 
-Python script for detecting different objects in video and saving the ROI, allowing to build faster databases for image processing and deep learning. 
+Python script for detecting different objects in video and saving the ROI, allowing to build databases for image processing and deep learning in a faster way. 
 
 ## Getting Started
 
