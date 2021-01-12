@@ -37,7 +37,7 @@ This is an example of the usage
 
 ```
 python object_detection_filevideo.py \
-  --object <class_name>
+  --object <class_name> \
   --prototxt MobileNetSSD_deploy.prototxt.txt \
   --model MobileNetSSD_deploy.caffemodel \
   --confidence 0.7 \
