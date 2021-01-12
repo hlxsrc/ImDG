@@ -1,4 +1,4 @@
-# Image Database Generator 
+# ImDG or Image Database Generator 
 
 Python script for detecting different objects in video and saving the ROI, allowing to build databases for image processing and deep learning in a faster way. 
 
@@ -24,6 +24,7 @@ Once cloned or unzipped change into the main folder
 
 The necessary arguments to run the program are
 
+* "-obj" or "--object" which is the class name of the object to detect. 
 * "-p" or "--prototxt" which is the path to Caffe 'deploy' prototxt file.
 * "-m" or "--model" which is the path to Caffe pre-trained model.
 * "-c" or "--confidence" this is the minimum probability to filter weak detections, default is "0.2".
@@ -36,18 +37,44 @@ This is an example of the usage
 
 ```
 python object_detection_filevideo.py \
---prototxt MobileNetSSD_deploy.prototxt.txt \
---model MobileNetSSD_deploy.caffemodel \
---confidence 0.7 \
---video /path/to/the/video.mp4 \
---output output/
+  --object <class_name>
+  --prototxt MobileNetSSD_deploy.prototxt.txt \
+  --model MobileNetSSD_deploy.caffemodel \
+  --confidence 0.7 \
+  --video /path/to/the/video.mp4 \
+  --output output/
 ```
+### Class Name
+
+MobileNet SSD was first trained to detect 20 objects. The name of these object are: 
+
+- background 
+- aeroplane 
+- bicycle 
+- bird 
+- boat
+- bottle 
+- bus
+- car
+- cat
+- chair
+- cow
+- diningtable
+- dog
+- horse
+- motorbike 
+- person 
+- pottedplant
+- sheep
+- sofa
+- train
+- tvmonitor
 
 ## Testing
 
 Once the program is running, you can choose between taking a capture of the ROI or quit the program, using the following keys:
 
-* "k" for taking a capture
+* "s" for taking a capture
 * "q" to quit the program
 
 ## Results 
@@ -65,6 +92,5 @@ This program is based on
 
 ## Notes
 
-* MobileNet SSD was first trained to detect 20 objects, in this scenario we are just interested in cars. 
 * Bounding box and label are deactivated by default, they are included in the code and can be uncommented.
 * The use of this script is intended for creating a simple car database which will be used for Deep Learning. 
